@@ -1,0 +1,86 @@
+.layout {
+  display: flex;
+  height: 100vh;
+
+  .sidebar {
+    width: 250px;
+    background-color: var(--primary-500);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 0;
+
+    .sidebar-header {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding-bottom: 1rem;
+      color: white;
+    }
+
+    .sidebar-menu {
+      flex: 1;
+      padding: 0 1rem;
+      overflow-y: auto;
+
+      ::ng-deep .p-panelmenu {
+        border: none;
+        background: transparent;
+
+        .p-panelmenu-panel {
+          background-color: white;
+        }
+
+        .p-menuitem {
+          .p-menuitem-link {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0;
+            color: inherit;
+            font-size: 1rem;
+
+            .p-menuitem-icon {
+              margin-right: 0.75rem;
+              font-size: 1.25rem;
+            }
+          }
+        }
+
+        .p-menuitem-active {
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+      }
+    }
+
+    .sidebar-footer {
+      text-align: center;
+      padding: 1rem;
+
+      .user-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        .profile-pic {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-right: 0.5rem;
+        }
+
+        .user-name {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .content {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: #f4f4f4;
+  }
+}

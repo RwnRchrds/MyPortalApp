@@ -1,0 +1,29 @@
+<div class="w-full flex full-viewport lg:align-items-center justify-content-center align-items-start">
+  <div class="surface-card login-form p-4 shadow-2 border-round w-full lg:w-4 mt-4 mx-2">
+    <div class="text-center mb-5">
+      <h1 class="text-primary">MyPortal</h1>
+      <div class="text-900 text-3xl font-medium mb-3">{{schoolName}}</div>
+      <span class="text-600 font-medium line-height-3">Have an account code?</span>
+      <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Create account</a>
+    </div>
+
+    <div *ngIf="showError" class="text-center mb-10">
+      <p class="p-error">{{error}}</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <label for="username" class="block text-900 font-medium mb-2">Username</label>
+      <input id="username" type="text" formControlName="username" pInputText class="w-full mb-3">
+
+      <label for="password" class="block text-900 font-medium mb-2">Password</label>
+      <input id="password" type="password" formControlName="password" pInputText class="w-full mb-3">
+
+      <div class="flex align-items-center">
+        <p-checkbox id="remember-me" [binary]="true" formControlName="saveCredentials" styleClass="mr-2"></p-checkbox>
+        <label for="remember-me">Remember me</label>
+      </div>
+
+      <button type="submit" pButton pRipple label="Sign In" class="mt-5 w-full"></button>
+    </form>
+  </div>
+</div>

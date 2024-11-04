@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full height to cover the viewport */
+  background: linear-gradient(to right, var(--primary-color), purple);
+}
+
+.surface-card {
+  z-index: 10; /* Ensure the card is above the background */
+  padding: 2rem; /* Increase padding for better spacing */
+  border-radius: 1rem; /* Optional: round the corners */
+  width: 100%; /* Full width of the container */
+  max-width: 600px; /* Set a max width for larger screens */
+}
