@@ -1,0 +1,75 @@
+.no-margin{
+  margin: 0;
+}
+
+.full-viewport {
+  height: 100vh;
+}
+
+.mt-9 {
+  margin-top: 6rem;
+}
+
+.mt-10 {
+  margin-top: 7rem;
+}
+
+.mt-11 {
+  margin-top: 8rem;
+}
+
+.mt-12 {
+  margin-top: 9rem;
+}
+
+@media screen and (min-width: 992px) {
+  .lg\:mt-9 {
+    margin-top: 6rem !important;
+  }
+  .lg\:mt-10 {
+    margin-top: 7rem !important;
+  }
+  .lg\:mt-11 {
+    margin-top: 8rem;
+  }
+  .lg\:mt-12 {
+    margin-top: 9rem;
+  }
+}
+
+.status-badge {
+  border-radius: 2px;
+  padding: 0.25em 0.5em;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: .3px;
+  &-warning {
+    @extend .status-badge;
+    background: #FEEDAF;
+    color: #8A5340;
+  }
+  &-success {
+    @extend .status-badge;
+    background: #C8E6C9;
+    color: #256029;
+  }
+  &-danger {
+    @extend .status-badge;
+    background: #FFCDD2;
+    color: #c63737;
+  }
+  &-info {
+    @extend .status-badge;
+    background: #b3e5fc;
+    color: #23547b;
+  }
+  &-help {
+    @extend .status-badge;
+    background: #eccfff;
+    color: #694382;
+  }
+}
+
+.control-invalid {
+  border-color: #e24c4c !important;
+}

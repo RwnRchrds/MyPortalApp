@@ -1,13 +1,18 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {PrimeNGConfig} from 'primeng/api';
+import {AuthService} from './shared/services/auth.service';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
-  title = 'myportal-app';
+export class AppComponent implements OnInit {
+  constructor(private primeConfig: PrimeNGConfig, private authService: AuthService) {
+  }
+
+  ngOnInit() {
+    this.primeConfig.ripple = true;
+    this.authService.loadFromStorage().subscribe();
+  }
 }
