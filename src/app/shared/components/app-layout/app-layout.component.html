@@ -1,0 +1,58 @@
+<div class="app-container">
+  <!-- Sidebar (PrimeNG p-sidebar) -->
+  <p-sidebar [(visible)]="menuOpened" position="left" [modal]="true" (onHide)="menuOpened = false" [baseZIndex]="10000"
+             class="mobile-sidebar">
+    <!-- Logo in Sidebar -->
+    <div class="sidebar-logo">
+      <span class="logo">MyPortal</span>
+    </div>
+    <!-- Sidebar Menu -->
+    <p-panelMenu [model]="menuItems" class="sidebar-menu"></p-panelMenu>
+  </p-sidebar>
+
+  <!-- Sidebar for Desktop (Always Visible) -->
+  <div class="desktop-sidebar">
+    <div class="sidebar-logo">
+      <span class="logo">MyPortal</span>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-menu">
+        <p-panelMenu [model]="menuItems"></p-panelMenu>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="top-bar-content">
+        <button *ngIf="!menuOpened" class="burger-button" (click)="menuOpened = true">
+          <i class="pi pi-bars text-white"></i>
+        </button>
+
+        <div class="top-bar-actions">
+          <p-button class="user-button" (click)="toggleProfileMenu($event)" [text]="true" [plain]="true">
+            <p-avatar class="mr-2" [icon]="PrimeIcons.USER"></p-avatar>
+            <span class="user-name">
+              {{(currentUser$ | async)?.displayName}}
+        </span>
+          </p-button>
+        </div>
+      </div>
+    </div>
+    <div class="content-area">
+      <div class="content-presenter mx-2 my-2">
+        <router-outlet></router-outlet>
+      </div>
+      <footer class="content-footer mx-3">
+        <span class="text-gray-500">2024 &copy; MyPortal</span>
+      </footer>
+    </div>
+  </main>
+
+  <!-- Profile Dropdown -->
+  <p-overlayPanel #profileMenu>
+    <p-menu [model]="userMenuItems"></p-menu>
+  </p-overlayPanel>
+</div>

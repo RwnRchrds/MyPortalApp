@@ -1,0 +1,154 @@
+.app-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+::ng-deep {
+  .p-panelmenu .p-panelmenu-panel {
+    background-color: white;
+  }
+}
+
+.burger-button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.user-button .user-name {
+  font-weight: bold;
+  color: #ffffff; /* Also target the user name */
+}
+
+/* Ensure the user name stays the same on hover */
+.user-button:hover .user-name {
+  color: var(--highlight-text-color); /* Same color as default */
+}
+
+/* Additional styles to adjust padding or margins as needed */
+.user-button {
+  padding: 0.5rem 1rem; /* Adjust button padding */
+}
+
+.logo {
+  display: table;
+  margin: 0 auto;
+  width: 220px;
+  color: var(--primary-color-text);
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.top-bar-content {
+  padding: 20px 5px 20px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  background-color: var(--primary-700);
+}
+
+.top-bar-actions {
+  margin-left: auto;
+}
+
+/* Sidebar Styles */
+.desktop-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  background-color: #f1f3f5;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+  overflow-y: auto;
+}
+
+.sidebar-logo {
+  padding: 26.5px;
+  background-color: var(--primary-700);
+}
+
+.sidebar-content {
+  flex: 1;
+  border-right: 1px solid;
+  border-color: var(--gray-300);
+}
+
+.sidebar-menu {
+  margin: 4rem 1rem 0;
+}
+
+.mobile-sidebar {
+  display: none;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 250px;
+  overflow-y: auto;
+  background-color: #f1f3f5;
+}
+
+.content-presenter {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.content-footer {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.content-area {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  border-radius: .75rem;
+  //border: 1px solid;
+  border-color: var(--gray-300);
+}
+
+/* Profile Dropdown */
+.profile-dropdown {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .burger-button {
+    display: block;
+  }
+  .desktop-sidebar {
+    display: none;
+  }
+  .mobile-sidebar {
+    display: block;
+  }
+  .logo {
+    color: var(--primary-700);
+  }
+  .sidebar-logo {
+    background-color: white;
+  }
+  .top-bar-content {
+    padding: 20px 0 20px 20px;
+  }
+  .main {
+    margin-left: 0;
+  }
+}

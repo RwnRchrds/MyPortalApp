@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {BaseLayoutComponent} from './components/base-layout/base-layout.component';
+import {AppLayoutComponent} from './components/app-layout/app-layout.component';
 import {RouterOutlet} from '@angular/router';
 import {MenuModule} from 'primeng/menu';
 import {ToastModule} from 'primeng/toast';
@@ -9,12 +9,19 @@ import {MessageModule} from 'primeng/message';
 import {MessagesModule} from 'primeng/messages';
 import {MenubarModule} from 'primeng/menubar';
 import {PanelMenuModule} from 'primeng/panelmenu';
+import {ButtonModule} from 'primeng/button';
+import {SidebarModule} from 'primeng/sidebar';
+import {OverlayPanelModule} from 'primeng/overlaypanel';
+import {CardModule} from 'primeng/card';
+import {ToolbarModule} from 'primeng/toolbar';
+import {SplitButtonModule} from 'primeng/splitbutton';
+import {InputTextModule} from 'primeng/inputtext';
 
 
 
 @NgModule({
   declarations: [
-    BaseLayoutComponent
+    AppLayoutComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +32,14 @@ import {PanelMenuModule} from 'primeng/panelmenu';
     ToastModule,
     AvatarModule,
     MenubarModule,
-    PanelMenuModule
+    PanelMenuModule,
+    ButtonModule,
+    SidebarModule,
+    OverlayPanelModule,
+    CardModule,
+    ToolbarModule,
+    SplitButtonModule,
+    InputTextModule
   ],
   exports: [
     MenuModule,
@@ -34,7 +48,14 @@ import {PanelMenuModule} from 'primeng/panelmenu';
     ToastModule,
     AvatarModule,
     MenubarModule,
-    PanelMenuModule
+    PanelMenuModule,
+    ButtonModule,
+    SidebarModule,
+    OverlayPanelModule,
+    CardModule,
+    ToolbarModule,
+    SplitButtonModule,
+    InputTextModule
   ]
 })
 export class SharedModule { }

@@ -1,29 +1,34 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {AppMenuItem} from '../../models/app-menu-item';
-import {MenuItem} from 'primeng/api';
-import {Menu} from 'primeng/menu';
+import {MenuItem, PrimeIcons} from 'primeng/api';
 import {AuthService} from '../../services/auth.service';
 import {Router} from '@angular/router';
 import {PermissionMode} from '../../models/permission-mode';
 import {AppUser} from '../../models/app-user';
 import {map, Observable, take} from 'rxjs';
 import {StringHelper} from '../../helpers/string-helper';
+import {OverlayPanel} from 'primeng/overlaypanel';
 
 @Component({
-  selector: 'app-base-layout',
-  templateUrl: './base-layout.component.html',
-  styleUrl: './base-layout.component.scss'
+  selector: 'app-app-layout',
+  templateUrl: './app-layout.component.html',
+  styleUrl: './app-layout.component.scss'
 })
-export class BaseLayoutComponent implements OnInit {
+export class AppLayoutComponent implements OnInit {
 
   protected portalName!: string;
   protected menuItems!: AppMenuItem[];
   protected userMenuItems!: MenuItem[];
+  menuOpened = false;
 
   constructor(protected authService: AuthService, protected router: Router) {
   }
 
-  @ViewChild('userMenu') userMenu!: Menu;
+  @ViewChild('profileMenu') profileMenu!: OverlayPanel;
+
+  toggleProfileMenu(event: Event) {
+    this.profileMenu.toggle(event);
+  }
 
   ngOnInit() {
     this.userMenuItems = [
@@ -104,14 +109,5 @@ export class BaseLayoutComponent implements OnInit {
     });
   }
 
-  getUserMenuItems(): MenuItem[] {
-    return this.userMenuItems;
-  }
-
-  inkStyle(menuItem: AppMenuItem) {
-    if (menuItem.items != null && menuItem.items.length > 0) {
-      return {height: '247px', width: '247px', top: '-98.5px', left: '-51px'};
-    }
-    return null;
-  }
+  protected readonly PrimeIcons = PrimeIcons;
 }

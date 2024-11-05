@@ -1,16 +1,16 @@
 import {Component, OnInit} from '@angular/core';
-import {BaseLayoutComponent} from '../../../shared/components/base-layout/base-layout.component';
+import {AppLayoutComponent} from '../../../shared/components/app-layout/app-layout.component';
 import {AuthService} from '../../../shared/services/auth.service';
 import {Router} from '@angular/router';
 import {AppPermission} from '../../../shared/enums/app-permission';
 import {PrimeIcons} from 'primeng/api';
 
 @Component({
-  selector: 'app-staff-base-layout',
-  templateUrl: '../../../shared/components/base-layout/base-layout.component.html',
-  styleUrls: ['../../../shared/components/base-layout/base-layout.component.scss']
+  selector: 'app-staff-app-layout',
+  templateUrl: '../../../shared/components/app-layout/app-layout.component.html',
+  styleUrls: ['../../../shared/components/app-layout/app-layout.component.scss']
 })
-export class LayoutComponent extends BaseLayoutComponent implements OnInit {
+export class LayoutComponent extends AppLayoutComponent implements OnInit {
   constructor(protected override authService: AuthService, protected override router: Router) {
     super(authService, router);
   }
